@@ -18,7 +18,8 @@ public class App extends JFrame {
         // Database connection setup
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chatApp", "pradyumna", "Ferrari@2004");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chatApp", "pradyumna",
+                    "Ferrari@2004");
             createTableIfNotExists();
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,7 +112,8 @@ public class App extends JFrame {
     private void sendMessage() {
         String message = messageField.getText();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO messages (username, message) VALUES (?, ?)");
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("INSERT INTO messages (username, message) VALUES (?, ?)");
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, message);
             preparedStatement.executeUpdate();
