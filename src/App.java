@@ -18,8 +18,8 @@ public class App extends JFrame {
         // Database connection setup
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chatApp", "pradyumna",
-                    "Ferrari@2004");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/chatApp", "USERNAME",
+                    "PASSWORD");
             createTableIfNotExists();
         } catch (Exception e) {
             e.printStackTrace();
